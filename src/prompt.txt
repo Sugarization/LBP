@@ -3,3 +3,6 @@
 *** Welcome to Local BLAST with Python!       ***
     -----------------------------------------    
 
+@fasta
+Enter path to gene pattern FASTA file:
+@~

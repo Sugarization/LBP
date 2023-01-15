@@ -1,16 +1,23 @@
 import support
 import subprocess
 
+from pathlib import Path
+
 typeList = ['.fa', '.fsa', '.fasta']
 remove_unmasked_database = True
 
 support.setSystemPath()
 
-prompts = support.getPrompt()
+promptDic = support.getPrompt()
+prompt = lambda section : print(promptDic[section])
 platform = support.getPlatform()
 
-os.system('@echo off')
-print('Enter path to gene pattern FASTA file:')
+if platform == 'Windows':
+    os.system('@echo off')
+    
+prompt('welcome')
+    
+prompt('fasta')
 genePath = Path(input())
 
 print('Enter path to database FASTA file or masked database:')

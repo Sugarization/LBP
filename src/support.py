@@ -27,7 +27,7 @@ def getPrompt():
                 j = i + 1
                 while j < len(lines) and lines[j][0] != '@':
                     j += 1
-                dic[lines[i].strip()[1:]] = ''.join(lines[i:j])
+                dic[lines[i].strip()[1:]] = ''.join(lines[i + 1:j])
     
     return dic
-                
+    
