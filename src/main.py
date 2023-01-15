@@ -1,12 +1,14 @@
-import os
+import support
 import subprocess
-from pathlib import Path
 
 typeList = ['.fa', '.fsa', '.fasta']
 remove_unmasked_database = True
 
-print('\n*** Welcome to Local BLAST Automation Script! ***')
-print(  '    -----------------------------------------    \n')
+support.setSystemPath()
+
+prompts = support.getPrompt()
+platform = support.getPlatform()
+
 os.system('@echo off')
 print('Enter path to gene pattern FASTA file:')
 genePath = Path(input())
@@ -64,3 +66,5 @@ subprocess.run(['blastn', '-query', str(genePath), '-db', maskedDBName,
 os.system('move blastResult.out ' + str(p))
 
 print('\n[Script Info] Blast finished.')
+
+promptText.close()
